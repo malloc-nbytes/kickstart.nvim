@@ -62,6 +62,8 @@ vim.cmd([[set cursorline]])
 vim.cmd([[set relativenumber]])
 vim.cmd([[set listchars=tab:▸\ ,trail:·,extends:»,precedes:«,nbsp:⎵]])
 
+vim.o.guicursor = 'a:block'
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
