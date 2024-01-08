@@ -44,6 +44,24 @@ P.S. You can delete this when you're done too. It's your config now :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.api.nvim_set_keymap('n', '<Leader>fs', ':w<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>tw', ':%s/\\s\\+$//e<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>fj', ':Explore<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>w-', ':sp<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>w/', ':vsp<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>wd', ':q<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>wo', '<C-W><C-W>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>wm', ':only<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>bn', ':bn<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>bp', ':bp<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>bd', ':bd<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>\'', ':term<CR>', { noremap = true, silent = true })
+
+vim.cmd([[set list]])
+vim.cmd([[set cursorline]])
+vim.cmd([[set relativenumber]])
+vim.cmd([[set listchars=tab:▸\ ,trail:·,extends:»,precedes:«,nbsp:⎵]])
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -266,7 +284,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
